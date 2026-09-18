@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReceiptLens — Legal / الشروط والسياسات</title>
+<style>
+  :root {
+    --bg: #f6f8fb;
+    --card: #ffffff;
+    --text: #1a2233;
+    --muted: #5b6b7c;
+    --primary: #1A73E8;
+    --primary-light: #e8f0fe;
+    --border: #e3e8ef;
+    --radius: 14px;
+    --shadow: 0 2px 12px rgba(0,0,0,.06);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; transition: direction .3s; }
+
+  header {
+    background: linear-gradient(135deg, #1A73E8, #0d47a1);
+    color: #fff; padding: 32px 20px 28px; text-align: center;
+  }
+  header h1 { font-size: 26px; font-weight: 700; letter-spacing: -.3px; }
+  header p { margin-top: 6px; font-size: 14px; opacity: .85; }
+
+  .lang-toggle {
+    display: flex; justify-content: center; gap: 0; margin-top: 18px;
+    background: var(--card); border-radius: 999px; padding: 4px;
+    box-shadow: var(--shadow); width: fit-content; margin-inline: auto;
+  }
+  .lang-toggle button {
+    border: none; background: transparent; padding: 8px 20px;
+    border-radius: 999px; font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: all .2s; color: var(--muted);
+  }
+  .lang-toggle button.active { background: var(--primary); color: #fff; }
+  .lang-toggle button:hover:not(.active) { color: var(--primary); background: var(--primary-light); }
+
+  nav {
+    display: flex; justify-content: center; gap: 6px;
+    padding: 20px 10px 0; flex-wrap: wrap;
+  }
+  nav button {
+    background: var(--card); border: 1px solid var(--border);
+    color: var(--text); padding: 10px 20px; border-radius: var(--radius);
+    font-size: 14px; font-weight: 500; cursor: pointer; transition: all .15s;
+  }
+  nav button:hover { border-color: var(--primary); color: var(--primary); }
+  nav button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+  main { max-width: 820px; margin: 0 auto; padding: 0 16px 60px; }
+  .doc { display: none; }
+  .doc.active { display: block; }
+
+  .doc-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 32px 28px; margin-top: 16px;
+    box-shadow: var(--shadow); animation: fadeIn .3s ease;
+  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .doc-card h2 { font-size: 22px; margin-bottom: 4px; color: var(--text); }
+  .updated {
+    font-size: 13px; color: var(--muted); background: var(--bg);
+    display: inline-block; padding: 5px 12px; border-radius: 999px;
+    margin-bottom: 20px; font-weight: 500;
+  }
+  .doc-card h3 { font-size: 16px; margin: 22px 0 8px; color: var(--primary); font-weight: 600; }
+  .doc-card p, .doc-card li { color: var(--muted); font-size: 15px; }
+  .doc-card ul { padding-left: 20px; }
+  .doc-card li { margin-bottom: 8px; }
+  .doc-card a { color: var(--primary); text-decoration: none; font-weight: 500; }
+  .doc-card a:hover { text-decoration: underline; }
+
+  .contact-grid { display: grid; grid-template-columns: auto 1fr; gap: 10px 16px; margin-top: 12px; }
+  .contact-grid strong { color: var(--text); }
+
+  footer { text-align: center; color: var(--muted); font-size: 13px; padding: 30px 20px; }
+
+  [dir="rtl"] { text-align: right; }
+  [dir="rtl"] .contact-grid { text-align: right; }
+  [dir="rtl"] .doc-card ul { padding-right: 20px; padding-left: 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>ReceiptLens</h1>
+  <p>Legal Documents / الوثائق القانونية</p>
+  <div class="lang-toggle">
+    <button class="active" onclick="setLang('en')">English</button>
+    <button onclick="setLang('ar')">العربية</button>
+  </div>
+</header>
+
+<nav id="docNav">
+  <button class="active" onclick="showDoc('privacy')">Privacy Policy</button>
+  <button onclick="showDoc('terms')">Terms</button>
+  <button onclick="showDoc('contact')">Contact</button>
+</nav>
+
+<main>
+
+  <div id="privacy" class="doc active">
+    <div class="doc-card">
+      <h2 data-t="privacy.title">Privacy Policy</h2>
+      <span class="updated" data-t="privacy.updated">Last updated: September 17, 2026</span>
+
+      <h3 data-t="privacy.1">1. Who We Are</h3>
+      <p data-t="privacy.1p">ReceiptLens is a product developed by <strong>AMS Apps</strong> (Egypt). Questions: <a href="mailto:am1535146@gmail.com">am1535146@gmail.com</a></p>
+
+      <h3 data-t="privacy.2">2. Data We Collect</h3>
+      <ul>
+        <li data-t="privacy.2a"><strong>Local storage:</strong> receipt photos and extracted data (merchant, amount, date, category), plus preferences (language, dark mode, currency, ad settings).</li>
+        <li data-t="privacy.2b"><strong>Analytics:</strong> anonymous events (app opened, receipt saved, export, ad viewed) via Firebase Analytics — no PII; crash reports via Crashlytics; Pro subscription status via Google Play Billing (no payment data stored).</li>
+        <li data-t="privacy.2c"><strong>Cloud:</strong> receipt images are sent temporarily to <strong>Google Gemini AI</strong> for extraction and not retained. If offline, local extraction is used instead.</li>
+      </ul>
+
+      <h3 data-t="privacy.3">3. How We Use Your Data</h3>
+      <p data-t="privacy.3p">Only to make the app work: extracting receipt data, sorting and exporting (CSV/Excel), and enabling Pro. We never sell or share your data.</p>
+
+      <h3 data-t="privacy.4">4. Advertising</h3>
+      <p data-t="privacy.4p">We use Google AdMob (banner, rewarded, interstitial). Google may show personalized ads per its policies. Ads are removed when you subscribe to Pro.</p>
+
+      <h3 data-t="privacy.5">5. Your Rights</h3>
+      <p data-t="privacy.5p">You can delete any receipt or all your data permanently from Settings, cancel your subscription via Google Play, or contact us to request deletion.</p>
+
+      <h3 data-t="privacy.6">6. Third Parties</h3>
+      <p data-t="privacy.6p">Your data stays on your device and is never uploaded to our servers. Gemini/Firebase usage is governed by their own privacy policies.</p>
+
+      <h3 data-t="privacy.7">7. Updates</h3>
+      <p data-t="privacy.7p">Changes will be published here with the date updated above.</p>
+    </div>
+  </div>
+
+  <div id="privacy-ar" class="doc">
+    <div class="doc-card">
+      <h2 data-t="privacy.title_ar">سياسة الخصوصية</h2>
+      <span class="updated" data-t="privacy.updated_ar">آخر تحديث: 17 سبتمبر 2026</span>
+
+      <h3 data-t="privacy.1_ar">1. من نحن</h3>
+      <p data-t="privacy.1p_ar">ReceiptLens تطبيق من تطوير <strong>AMS Apps</strong> (مصر). للأسئلة: <a href="mailto:am1535146@gmail.com">am1535146@gmail.com</a></p>
+
+      <h3 data-t="privacy.2_ar">2. البيانات التي نجمعها</h3>
+      <ul>
+        <li data-t="privacy.2a_ar"><strong>التخزين المحلي:</strong> صور الإيصالات وبياناتها المستخرجة (التاجر، المبلغ، التاريخ، الفئة) وتفضيلاتك (اللغة، الوضع الداكن، العملة، إعدادات الإعلانات).</li>
+        <li data-t="privacy.2b_ar"><strong>التحليلات:</strong> أحداث مجهولة (فتح التطبيق، حفظ الإيصال، التصدير، مشاهدة إعلان) عبر Firebase Analytics — بدون أي معلومات شخصية؛ تقارير الأعطال عبر Crashlytics؛ حالة اشتراك Pro عبر Google Play Billing (بدون بيانات دفع).</li>
+        <li data-t="privacy.2c_ar"><strong>السحابة:</strong> صور الإيصالات تُرسل مؤقتًا إلى <strong>Google Gemini AI</strong> للاستخراج ولا تُحتفظ بها. عند انقطاع الشبكة يُستخدم استخراج محلي.</li>
+      </ul>
+
+      <h3 data-t="privacy.3_ar">3. كيف نستخدم بياناتك</h3>
+      <p data-t="privacy.3p_ar">فقط لتشغيل التطبيق: استخراج بيانات الإيصالات، الفرز والتصدير (CSV/Excel)، وتفعيل Pro. لا نبيع ولا نشارك بياناتك مع أي طرف ثالث.</p>
+
+      <h3 data-t="privacy.4_ar">4. الإعلانات</h3>
+      <p data-t="privacy.4p_ar">نستخدم Google AdMob (بانر، بمكافأة، بينية). قد تعرض جوجل إعلانات شخصية وفق سياساتها. تختفي الإعلانات عند الاشتراك في Pro.</p>
+
+      <h3 data-t="privacy.5_ar">5. حقوقك</h3>
+      <p data-t="privacy.5p_ar">تستطيع حذف أي إيصال أو كل بياناتك من الإعدادات، أو إلغاء الاشتراك من Google Play، أو التواصل معنا لطلب حذف بياناتك.</p>
+
+      <h3 data-t="privacy.6_ar">6. الأطراف الثالثة</h3>
+      <p data-t="privacy.6p_ar">بياناتك على جهازك ولا تُرفع لخوادمنا. Gemini/Firebase يخضعان لسياسات خصوصيتهما.</p>
+
+      <h3 data-t="privacy.7_ar">7. التحديثات</h3>
+      <p data-t="privacy.7p_ar">أي تعديل يُنشر مع تحديث التاريخ أعلاه.</p>
+    </div>
+  </div>
+
+  <div id="terms" class="doc">
+    <div class="doc-card">
+      <h2 data-t="terms.title">Terms and Conditions</h2>
+      <span class="updated" data-t="terms.updated">Last updated: September 17, 2026</span>
+
+      <h3 data-t="terms.1">1. Agreement</h3>
+      <p data-t="terms.1p">ReceiptLens is a personal expense-tracking tool. By downloading or using the app, you agree to these Terms. The app is intended for users aged 13+ as per Google Play Store policies.</p>
+
+      <h3 data-t="terms.2">2. No Warranty</h3>
+      <p data-t="terms.2p">The service is provided "as is". Extracted data may contain errors; you are responsible for verifying financial data before relying on it.</p>
+
+      <h3 data-t="terms.3">3. Subscriptions</h3>
+      <p data-t="terms.3p">Subscriptions are managed and billed by Google Play and can be cancelled there at any time. We do not process or store any payment information.</p>
+
+      <h3 data-t="terms.4">4. Acceptable Use</h3>
+      <p data-t="terms.4p">You agree not to use the app for any unlawful purpose or to exploit or damage the service.</p>
+
+      <h3 data-t="terms.5">5. Changes</h3>
+      <p data-t="terms.5p">We may update, modify, or discontinue the app at any time. Continued use after changes constitutes acceptance of revised Terms.</p>
+
+      <h3 data-t="terms.6">6. Governing Law</h3>
+      <p data-t="terms.6p">These Terms are governed by the laws of the Arab Republic of Egypt and applicable data protection regulations.</p>
+
+      <h3 data-t="terms.7">7. Contact</h3>
+      <p data-t="terms.7p">Questions or complaints: <a href="mailto:am1535146@gmail.com">am1535146@gmail.com</a></p>
+    </div>
+  </div>
+
+  <div id="terms-ar" class="doc">
+    <div class="doc-card">
+      <h2 data-t="terms.title_ar">الشروط والأحكام</h2>
+      <span class="updated" data-t="terms.updated_ar">آخر تحديث: 17 سبتمبر 2026</span>
+
+      <h3 data-t="terms.1_ar">1. الموافقة</h3>
+      <p data-t="terms.1p_ar">ReceiptLens أداة لتتبّع المصاريف الشخصية. بتحميلك أو استخدامك للتطبيق فأنت توافق على هذه الشروط. التطبيق مخصص للفئات العمرية 13+ حسب سياسات Google Play.</p>
+
+      <h3 data-t="terms.2_ar">2. لا ضمان</h3>
+      <p data-t="terms.2p_ar">الخدمة مقدمة "كما هي". قد تحتوي البيانات المستخرجة على أخطاء؛ وعليك التحقق من دقتها قبل الاعتماد عليها.</p>
+
+      <h3 data-t="terms.3_ar">3. الاشتراكات</h3>
+      <p data-t="terms.3p_ar">الاشتراكات تُدار وتُحصَّل عبر Google Play ويمكن إلغاؤها منه في أي وقت. لا نعالج أو نخزن أي معلومات دفع.</p>
+
+      <h3 data-t="terms.4_ar">4. الاستخدام المقبول</h3>
+      <p data-t="terms.4p_ar">توافق على عدم استخدام التطبيق لأي غرض غير قانوني أو محاولة استغلال أو إضرار بالخدمة.</p>
+
+      <h3 data-t="terms.5_ar">5. التغييرات</h3>
+      <p data-t="terms.5p_ar">يجوز لنا تعديل أو تحديث أو إيقاف التطبيق في أي وقت. استمرار الاستخدام بعد التغييرات يعني قبولك للشروط المحدّثة.</p>
+
+      <h3 data-t="terms.6_ar">6. القانون المطبق</h3>
+      <p data-t="terms.6p_ar">تخضع هذه الشروط لقوانين جمهورية مصر العربية ولوائح حماية البيانات السارية.</p>
+
+      <h3 data-t="terms.7_ar">7. التواصل</h3>
+      <p data-t="terms.7p_ar">الأسئلة أو الشكاوى: <a href="mailto:am1535146@gmail.com">am1535146@gmail.com</a></p>
+    </div>
+  </div>
+
+  <div id="contact" class="doc">
+    <div class="doc-card">
+      <h2 data-t="contact.title">Contact Us / تواصل معنا</h2>
+      <span class="updated" data-t="contact.updated">Last updated: September 17, 2026</span>
+      <div class="contact-grid">
+        <span data-t="contact.app">App:</span><span data-t="contact.app_v">ReceiptLens</span>
+        <span data-t="contact.dev">Developer:</span><span data-t="contact.dev_v">AMS Apps</span>
+        <span data-t="contact.email">Email:</span><span><a href="mailto:am1535146@gmail.com">am1535146@gmail.com</a></span>
+        <span data-t="contact.country">Country:</span><span data-t="contact.country_v">مصر — Egypt</span>
+        <span data-t="contact.time">Response:</span><span data-t="contact.time_v">Usually 12–48 hours</span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 AMS Apps · ReceiptLens
+</footer>
+
+<script>
+  const dict = {
+    en: {
+      'privacy.title':'Privacy Policy','privacy.updated':'Last updated: September 17, 2026',
+      'privacy.1':'1. Who We Are','privacy.1p':'ReceiptLens is a product developed by <strong>AMS Apps</strong> (Egypt). Questions: <a href="mailto:am1535146@gmail.com">am1535146@gmail.com</a>',
+      'privacy.2':'2. Data We Collect',
+      'privacy.2a':'<strong>Local storage:</strong> receipt photos and extracted data (merchant, amount, date, category), plus preferences (language, dark mode, currency, ad settings).',
+      'privacy.2b':'<strong>Analytics:</strong> anonymous events (app opened, receipt saved, export, ad viewed) via Firebase Analytics — no PII; crash reports via Crashlytics; Pro subscription status via Google Play Billing (no payment data stored).',
+      'privacy.2c':'<strong>Cloud:</strong> receipt images are sent temporarily to <strong>Google Gemini AI</strong> for extraction and not retained. If offline, local extraction is used instead.',
+      'privacy.3':'3. How We Use Your Data','privacy.3p':'Only to make the app work: extracting receipt data, sorting and exporting (CSV/Excel), and enabling Pro. We never sell or share your data.',
+      'privacy.4':'4. Advertising','privacy.4p':'We use Google AdMob (banner, rewarded, interstitial). Google may show personalized ads per its policies. Ads are removed when you subscribe to Pro.',
+      'privacy.5':'5. Your Rights','privacy.5p':'You can delete any receipt or all your data permanently from Settings, cancel your subscription via Google Play, or contact us to request deletion.',
+      'privacy.6':'6. Third Parties','privacy.6p':'Your data stays on your device and is never uploaded to our servers. Gemini/Firebase usage is governed by their own privacy policies.',
+      'privacy.7':'7. Updates','privacy.7p':'Changes will be published here with the date updated above.',
+      'terms.title':'Terms and Conditions','terms.updated':'Last updated: September 17, 2026',
+      'terms.1':'1. Agreement','terms.1p':'ReceiptLens is a personal expense-tracking tool. By downloading or using the app, you agree to these Terms. The app is intended for users aged 13+ as per Google Play Store policies.',
+      'terms.2':'2. No Warranty','terms.2p':'The service is provided "as is". Extracted data may contain errors; you are responsible for verifying financial data before relying on it.',
+      'terms.3':'3. Subscriptions','terms.3p':'Subscriptions are managed and billed by Google Play and can be cancelled there at any time. We do not process or store any payment information.',
+      'terms.4':'4. Acceptable Use','terms.4p':'You agree not to use the app for any unlawful purpose or to exploit or damage the service.',
+      'terms.5':'5. Changes','terms.5p':'We may update, modify, or discontinue the app at any time. Continued use after changes constitutes acceptance of revised Terms.',
+      'terms.6':'6. Governing Law','terms.6p':'These Terms are governed by the laws of the Arab Republic of Egypt and applicable data protection regulations.',
+      'terms.7':'7. Contact','terms.7p':'Questions or complaints: <a href="mailto:am1535146@gmail.com">am1535146@gmail.com</a>',
+      'contact.title':'Contact Us','contact.updated':'Last updated: September 17, 2026',
+      'contact.app':'App:','contact.app_v':'ReceiptLens',
+      'contact.dev':'Developer:','contact.dev_v':'AMS Apps',
+      'contact.email':'Email:','contact.country':'Country:','contact.country_v':'مصر — Egypt',
+      'contact.time':'Response:','contact.time_v':'Usually 12–48 hours'
+    },
+    ar: {
+      'privacy.title':'سياسة الخصوصية','privacy.updated':'آخر تحديث: 17 سبتمبر 2026',
+      'privacy.1':'1. من نحن','privacy.1p':'ReceiptLens تطبيق من تطوير <strong>AMS Apps</strong> (مصر). للأسئلة: <a href="mailto:am1535146@gmail.com">am1535146@gmail.com</a>',
+      'privacy.2':'2. البيانات التي نجمعها',
+      'privacy.2a':'<strong>التخزين المحلي:</strong> صور الإيصالات وبياناتها المستخرجة (التاجر، المبلغ، التاريخ، الفئة) وتفضيلاتك (اللغة، الوضع الداكن، العملة، إعدادات الإعلانات).',
+      'privacy.2b':'<strong>التحليلات:</strong> أحداث مجهولة (فتح التطبيق، حفظ الإيصال، التصدير، مشاهدة إعلان) عبر Firebase Analytics — بدون أي معلومات شخصية؛ تقارير الأعطال عبر Crashlytics؛ حالة اشتراك Pro عبر Google Play Billing (بدون بيانات دفع).',
+      'privacy.2c':'<strong>السحابة:</strong> صور الإيصالات تُرسل مؤقتًا إلى <strong>Google Gemini AI</strong> للاستخراج ولا تُحتفظ بها. عند انقطاع الشبكة يُستخدم استخراج محلي.',
+      'privacy.3':'3. كيف نستخدم بياناتك','privacy.3p':'فقط لتشغيل التطبيق: استخراج بيانات الإيصالات، الفرز والتصدير (CSV/Excel)، وتفعيل Pro. لا نبيع ولا نشارك بياناتك مع أي طرف ثالث.',
+      'privacy.4':'4. الإعلانات','privacy.4p':'نستخدم Google AdMob (بانر، بمكافأة، بينية). قد تعرض جوجل إعلانات شخصية وفق سياساتها. تختفي الإعلانات عند الاشتراك في Pro.',
+      'privacy.5':'5. حقوقك','privacy.5p':'تستطيع حذف أي إيصال أو كل بياناتك من الإعدادات، أو إلغاء الاشتراك من Google Play، أو التواصل معنا لطلب حذف بياناتك.',
+      'privacy.6':'6. الأطراف الثالثة','privacy.6p':'بياناتك على جهازك ولا تُرفع لخوادمنا. Gemini/Firebase يخضعان لسياسات خصوصيتهما.',
+      'privacy.7':'7. التحديثات','privacy.7p':'أي تعديل يُنشر مع تحديث التاريخ أعلاه.',
+      'terms.title':'الشروط والأحكام','terms.updated':'آخر تحديث: 17 سبتمبر 2026',
+      'terms.1':'1. الموافقة','terms.1p':'ReceiptLens أداة لتتبّع المصاريف الشخصية. بتحميلك أو استخدامك للتطبيق فأنت توافق على هذه الشروط. التطبيق مخصص للفئات العمرية 13+ حسب سياسات Google Play.',
+      'terms.2':'2. لا ضمان','terms.2p':'الخدمة مقدمة "كما هي". قد تحتوي البيانات المستخرجة على أخطاء؛ وعليك التحقق من دقتها قبل الاعتماد عليها.',
+      'terms.3':'3. الاشتراكات','terms.3p':'الاشتراكات تُدار وتُحصَّل عبر Google Play ويمكن إلغاؤها منه في أي وقت. لا نعالج أو نخزن أي معلومات دفع.',
+      'terms.4':'4. الاستخدام المقبول','terms.4p':'توافق على عدم استخدام التطبيق لأي غرض غير قانوني أو محاولة استغلال أو إضرار بالخدمة.',
+      'terms.5':'5. التغييرات','terms.5p':'يجوز لنا تعديل أو تحديث أو إيقاف التطبيق في أي وقت. استمرار الاستخدام بعد التغييرات يعني قبولك للشروط المحدّثة.',
+      'terms.6':'6. القانون المطبق','terms.6p':'تخضع هذه الشروط لقوانين جمهورية مصر العربية ولوائح حماية البيانات السارية.',
+      'terms.7':'7. التواصل','terms.7p':'الأسئلة أو الشكاوى: <a href="mailto:am1535146@gmail.com">am1535146@gmail.com</a>',
+      'contact.title':'تواصل معنا','contact.updated':'آخر تحديث: 17 سبتمبر 2026',
+      'contact.app':'التطبيق:','contact.app_v':'ReceiptLens',
+      'contact.dev':'المطور:','contact.dev_v':'AMS Apps',
+      'contact.email':'البريد:','contact.country':'الدولة:','contact.country_v':'مصر — Egypt',
+      'contact.time':'وقت الرد:','contact.time_v':'عادة 12–48 ساعة'
+    }
+  };
+
+  let currentLang = 'en';
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.textContent.trim() === (lang === 'en' ? 'English' : 'العربية')));
+
+    document.querySelectorAll('[data-t]').forEach(el => {
+      const key = el.getAttribute('data-t');
+      if (dict[lang] && dict[lang][key]) el.innerHTML = dict[lang][key];
+    });
+  }
+
+  function showDoc(id) {
+    document.querySelectorAll('.doc').forEach(d => d.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('#docNav button').forEach(b => b.classList.remove('active'));
+    const labels = { 'privacy':'Privacy Policy', 'terms':'Terms', 'contact':'Contact' };
+    document.querySelectorAll('#docNav button').forEach(b => {
+      if (b.textContent.trim() === labels[id]) b.classList.add('active');
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
